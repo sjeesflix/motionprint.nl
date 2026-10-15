@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zwaar werk objectief meten | Motionprint</title>
-  <meta name="description" content="Wij meten met kleine sensoren hoe zwaar taken in uw productie echt zijn, tijdens het werk. U ziet waar het knelt, wat helpt en of een aanpassing werkt." />
+  <meta name="description" content="Wij meten met sensoren hoe medewerkers hun taken uitvoeren, tijdens het werk. U ziet waar het lichaam overbelast raakt, waardoor, en of een aanpassing werkt." />
   <link rel="canonical" href="https://motionprint.nl/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Motionprint" />
   <meta property="og:title" content="Zwaar werk objectief meten | Motionprint" />
-  <meta property="og:description" content="Wij meten met kleine sensoren hoe zwaar taken in uw productie echt zijn, tijdens het werk. U ziet waar het knelt, wat helpt en of een aanpassing werkt." />
+  <meta property="og:description" content="Wij meten met sensoren hoe medewerkers hun taken uitvoeren, tijdens het werk. U ziet waar het lichaam overbelast raakt, waardoor, en of een aanpassing werkt." />
   <meta property="og:url" content="https://motionprint.nl/" />
   <meta property="og:image" content="https://motionprint.nl/trueavatar-poster.jpg" />
   <meta property="og:locale" content="nl_NL" />
@@ -130,6 +130,18 @@
     .step p { color: rgba(255,255,255,.65); font-size: 15.5px; }
     @media (max-width: 800px) { .steps { grid-template-columns: 1fr; } }
 
+
+    /* Meetpak */
+    .suit { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; margin-top: 40px; background: var(--dark-2); border: 1px solid rgba(255,255,255,.07); border-radius: var(--radius); overflow: hidden; }
+    .suit-photo img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 640 / 427; }
+    .suit-text { padding: 28px 32px 28px 0; }
+    .suit-text h3 { font-size: 22px; font-weight: 700; margin-bottom: 10px; }
+    .suit-text p { color: rgba(255,255,255,.7); font-size: 16px; margin-bottom: 18px; }
+    .suit-text ul { list-style: none; display: grid; gap: 10px; }
+    .suit-text li { font-size: 15.5px; color: rgba(255,255,255,.7); padding-left: 16px; border-left: 2px solid var(--green); }
+    .suit-text li b { color: #fff; font-weight: 600; }
+    @media (max-width: 800px) { .suit { grid-template-columns: 1fr; gap: 0; } .suit-text { padding: 24px; } }
+
     /* Pakketten */
     .pricing { background: var(--bg); }
     .pricing-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
@@ -229,7 +241,7 @@
       <div>
         <span class="eyebrow">Werkplekmetingen in Gelderland en Overijssel</span>
         <h1>Zwaar werk meten.<br><em>En lichter maken.</em></h1>
-        <p class="lead">Met kleine sensoren op het lichaam meten we hoe zwaar taken écht zijn: tijdens het werk, zonder dat de productie stil hoeft te liggen. U weet precies waar het knelt en wat helpt.</p>
+        <p class="lead">Met sensoren op het lichaam meten we hoe medewerkers hun taken écht uitvoeren: tijdens het werk, zonder dat de productie stil hoeft te liggen. Zo ziet u precies waar het knelt en waardoor.</p>
         <div class="hero-actions">
           <a href="#contact" class="btn btn-primary">Plan een kennismaking</a>
           <a href="#pakketten" class="btn btn-ghost">Bekijk de pakketten</a>
@@ -251,9 +263,9 @@
   <section class="recognize" aria-labelledby="h-herkenbaar">
     <div class="container">
       <div class="section-label">Herkenbaar?</div>
-      <h2 id="h-herkenbaar">Iedereen weet dat het zwaar is.<br>Niemand weet hoe zwaar.</h2>
+      <h2 id="h-herkenbaar">Iedereen weet dat het zwaar is.<br>Maar waar zit het probleem precies?</h2>
       <div class="recognize-grid">
-        <div class="recognize-item"><span class="dot"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><span>Iedereen weet dat sommige taken zwaar zijn, maar niemand kan zeggen hoe zwaar.</span></div>
+        <div class="recognize-item"><span class="dot"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><span>Iedereen weet dat sommige taken zwaar zijn, maar niemand kan precies zeggen waar het probleem zit.</span></div>
         <div class="recognize-item"><span class="dot"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><span>Medewerkers hebben rug-, nek- of schouderklachten, of vallen uit.</span></div>
         <div class="recognize-item"><span class="dot"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><span>U wilt investeren in hulpmiddelen of een andere werkplek, maar weet niet waar het meeste effect zit.</span></div>
         <div class="recognize-item"><span class="dot"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><span>U wilt kunnen laten zien dat u zwaar werk serieus aanpakt.</span></div>
@@ -289,21 +301,35 @@
       <div class="section-label" style="color:var(--green-light)">Werkwijze</div>
       <h2 id="h-werkwijze">Drie stappen, geen gedoe.</h2>
       <p class="section-intro">U hoeft niets voor te bereiden. Wij nemen alles mee.</p>
+      <div class="suit">
+        <figure class="suit-photo">
+          <img src="meting-op-de-werkvloer.jpg" alt="Medewerker aan een boormachine met oranje bewegingssensoren op armen, schouders en hoofd" width="640" height="427" loading="lazy" />
+        </figure>
+        <div class="suit-text">
+          <h3>Zo ziet een meting eruit</h3>
+          <p>17 kleine sensoren, bevestigd op een shirt en met straps. Ze gaan gewoon over de werkkleding heen en worden alleen tijdens de meting gedragen.</p>
+          <ul>
+            <li><b>± 15 minuten</b> om de sensoren aan te brengen en in te stellen</li>
+            <li><b>Enkele minuten</b> per taak of werkplek</li>
+            <li><b>Meerdere taken</b> direct achter elkaar, in één sessie</li>
+          </ul>
+        </div>
+      </div>
       <div class="steps">
         <div class="step">
           <div class="step-num">STAP 1</div>
           <h3>Kennismaking</h3>
-          <p>We lopen samen over de werkvloer en kiezen de taken die het zwaarst lijken.</p>
+          <p>We lopen samen over de werkvloer en kiezen de taken of werkplekken die u het meeste zorgen baren.</p>
         </div>
         <div class="step">
           <div class="step-num">STAP 2</div>
           <h3>Meten</h3>
-          <p>Een medewerker draagt kleine sensoren tijdens het gewone werk. Na een korte voorbereiding meten we elke taak een paar keer. De productie loopt gewoon door.</p>
+          <p>Een medewerker draagt de sensoren tijdens het gewone werk. Na ongeveer 15 minuten voorbereiding meten we de taken direct achter elkaar, elk binnen enkele minuten. De rest van de productie loopt gewoon door.</p>
         </div>
         <div class="step">
           <div class="step-num">STAP 3</div>
           <h3>Rapport en advies</h3>
-          <p>U krijgt een helder overzicht van welke taken het zwaarst zijn, waarom, en wat u concreet kunt verbeteren. We lichten de uitkomsten persoonlijk toe.</p>
+          <p>U krijgt een helder overzicht van waar het lichaam bij elke taak overbelast raakt en waardoor, met aanknopingspunten om het werk te verbeteren. We lichten de uitkomsten persoonlijk toe.</p>
         </div>
       </div>
     </div>
@@ -327,8 +353,8 @@
           <div class="price">€895 <small>excl. btw</small></div>
           <ul>
             <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Meting van 1 taak, op locatie</li>
-            <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Kort rapport: hoe zwaar is deze taak en waar zit het probleem?</li>
-            <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>3 concrete verbeterpunten</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Kort rapport: waar zitten de knelpunten bij deze taak en wat is de oorzaak?</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Aanknopingspunten voor verbetering</li>
           </ul>
           <a href="#contact" class="btn" data-pakket="Quickscan">Vraag de quickscan aan</a>
         </article>
@@ -340,8 +366,8 @@
           <div class="price">€2.250 <small>excl. btw</small></div>
           <ul>
             <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Meting van 3 tot 5 taken, één dag op locatie</li>
-            <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Rapport met ranglijst van de zwaarste taken en de oorzaken</li>
-            <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Verbeteringen met prioriteit: waar levert uw investering het meeste op?</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Rapport met de knelpunten per taak, de grootste risico's bovenaan</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Aanknopingspunten voor verbetering, met prioriteit: waar levert een aanpassing het meeste op?</li>
             <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Presentatie van de uitkomsten aan het management</li>
           </ul>
           <a href="#contact" class="btn btn-primary" data-pakket="Werkplekmeting">Vraag de werkplekmeting aan</a>
@@ -386,7 +412,7 @@
       <div class="faq-list">
         <details>
           <summary>Moet de productie stil liggen?</summary>
-          <p>Nee. We meten tijdens het gewone werk.</p>
+          <p>Nee. We meten tijdens het gewone werk. Alleen de medewerker die we meten is ongeveer 15 minuten kwijt aan het aanbrengen en instellen van de sensoren. Daarna meten we meerdere taken of werkplekken direct achter elkaar.</p>
         </details>
         <details>
           <summary>Hoe lang duurt een meting?</summary>
@@ -394,7 +420,7 @@
         </details>
         <details>
           <summary>Wat merken medewerkers ervan?</summary>
-          <p>Ze dragen een paar kleine sensoren met klittenband. Na een paar minuten merken ze er weinig meer van.</p>
+          <p>De medewerker draagt 17 kleine sensoren, bevestigd op een shirt en met straps. Dat gaat gewoon over de eigen werkkleding heen en hoeft alleen tijdens de meting gedragen te worden. De sensoren zijn licht en hinderen het werk nauwelijks.</p>
         </details>
         <details>
           <summary>Wat gebeurt er met de gegevens?</summary>
