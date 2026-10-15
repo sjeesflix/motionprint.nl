@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zwaar werk objectief meten | Motionprint</title>
+  <meta name="description" content="Wij meten met kleine sensoren hoe zwaar taken in uw productie echt zijn, tijdens het werk. U ziet waar het knelt, wat helpt en of een aanpassing werkt." />
+  <link rel="canonical" href="https://motionprint.nl/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Motionprint" />
+  <meta property="og:title" content="Zwaar werk objectief meten | Motionprint" />
+  <meta property="og:description" content="Wij meten met kleine sensoren hoe zwaar taken in uw productie echt zijn, tijdens het werk. U ziet waar het knelt, wat helpt en of een aanpassing werkt." />
+  <meta property="og:url" content="https://motionprint.nl/" />
+  <meta property="og:image" content="https://motionprint.nl/trueavatar-poster.jpg" />
+  <meta property="og:locale" content="nl_NL" />
+  <link rel="icon" type="image/png" href="Motionprint-minimized.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Motionprint — werkplekmetingen",
+    "url": "https://motionprint.nl/",
+    "image": "https://motionprint.nl/trueavatar-poster.jpg",
+    "email": "info@motion-print.com",
+    "areaServed": ["Gelderland", "Achterhoek", "Overijssel"],
+    "address": { "@type": "PostalAddress", "addressLocality": "Hengelo (Gld)", "addressCountry": "NL" },
+    "founder": { "@type": "Person", "name": "Felix Wolbert" },
+    "sameAs": ["https://motion-print.com/", "https://www.linkedin.com/company/motionprint"]
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #1D9E75;
+      --green-dark: #0F6E56;
+      --green-light: #5DCAA5;
+      --green-tint: #e8f6f0;
+      --dark: #0d0f12;
+      --dark-2: #161a20;
+      --dark-3: #1e2530;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --bg: #f9fafb;
+      --white: #ffffff;
+      --font: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --radius: 14px;
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+    body { font-family: var(--font); color: var(--text); background: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    img, video { display: block; max-width: 100%; }
+    a { color: inherit; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+    @media (max-width: 600px) { .container { padding: 0 16px; } }
+
+    /* ── Buttons ── */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: inherit; font-size: 15px; font-weight: 600; text-decoration: none; border-radius: 8px; padding: 13px 22px; border: 1px solid transparent; cursor: pointer; transition: background-color .15s, border-color .15s, color .15s; }
+    .btn-primary { background: var(--green); color: #fff; }
+    .btn-primary:hover { background: var(--green-dark); }
+    .btn-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,.22); }
+    .btn-ghost:hover { background: rgba(255,255,255,.08); }
+    .btn:focus-visible { outline: 2px solid var(--green-light); outline-offset: 3px; }
+
+    /* ── Nav ── */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 64px; background: rgba(13,15,18,.94); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,.07); }
+    .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 28px; height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .nav-logo img { height: 22px; width: auto; }
+    .nav-links { display: flex; gap: 4px; list-style: none; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,.6); text-decoration: none; padding: 6px 12px; border-radius: 6px; transition: color .15s, background .15s; }
+    .nav-links a:hover { color: #fff; background: rgba(255,255,255,.07); }
+    .nav-cta { font-size: 13px; font-weight: 600; color: #fff; text-decoration: none; background: var(--green); border-radius: 6px; padding: 8px 16px; white-space: nowrap; transition: background-color .15s; }
+    .nav-cta:hover { background: var(--green-light); }
+    @media (max-width: 820px) { .nav-links { display: none; } }
+    @media (max-width: 600px) { .nav-inner { padding: 0 16px; } }
+
+    /* ── Hero ── */
+    .hero { background: radial-gradient(ellipse 80% 70% at 85% 30%, rgba(29,158,117,.18), transparent 60%), var(--dark); color: #fff; padding: 136px 0 88px; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; }
+    .eyebrow { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: .04em; color: var(--green-light); background: rgba(29,158,117,.12); border: 1px solid rgba(93,202,165,.25); border-radius: 999px; padding: 5px 12px; margin-bottom: 22px; }
+    .hero h1 { font-size: clamp(36px, 5.2vw, 58px); line-height: 1.06; letter-spacing: -.025em; font-weight: 800; margin-bottom: 22px; }
+    .hero h1 em { font-style: normal; color: var(--green-light); }
+    .hero p.lead { font-size: 18px; color: rgba(255,255,255,.72); max-width: 520px; margin-bottom: 32px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-trust { display: flex; gap: 22px; flex-wrap: wrap; margin-top: 36px; font-size: 14px; color: rgba(255,255,255,.6); }
+    .hero-trust span { display: inline-flex; align-items: center; gap: 8px; }
+    .hero-trust svg { width: 16px; height: 16px; stroke: var(--green-light); fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+    .hero-visual { position: relative; border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(255,255,255,.08); box-shadow: 0 30px 80px rgba(0,0,0,.45); background: #dfe7ec; }
+    .hero-visual video { width: 100%; aspect-ratio: 618 / 340; object-fit: cover; }
+    .hero-visual figcaption { font-size: 13.5px; color: rgba(255,255,255,.75); background: var(--dark-2); border-top: 1px solid rgba(255,255,255,.07); padding: 12px 16px; }
+    .hero-visual figcaption b { color: var(--green-light); font-weight: 600; }
+    @media (max-width: 900px) {
+      .hero { padding: 108px 0 64px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    /* ── Sections ── */
+    section { padding: 88px 0; }
+    @media (max-width: 600px) { section { padding: 64px 0; } }
+    .section-label { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
+    h2 { font-size: clamp(28px, 3.6vw, 40px); line-height: 1.15; letter-spacing: -.02em; font-weight: 800; margin-bottom: 16px; }
+    .section-intro { font-size: 17px; color: var(--muted); max-width: 620px; }
+
+    /* Herkenbaar */
+    .recognize { background: var(--bg); }
+    .recognize-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 40px; }
+    .recognize-item { display: flex; gap: 14px; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; font-size: 16px; }
+    .recognize-item .dot { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--green-tint); display: grid; place-items: center; }
+    .recognize-item .dot svg { width: 15px; height: 15px; stroke: var(--green); fill: none; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+    @media (max-width: 700px) { .recognize-grid { grid-template-columns: 1fr; } }
+
+    /* Waarom nu */
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 44px; }
+    .why-card { border-top: 3px solid var(--green); padding-top: 20px; }
+    .why-card h3 { font-size: 19px; font-weight: 700; margin-bottom: 8px; }
+    .why-card p { color: var(--muted); font-size: 15.5px; }
+    @media (max-width: 800px) { .why-grid { grid-template-columns: 1fr; gap: 28px; } }
+
+    /* Hoe werkt het */
+    .how { background: var(--dark); color: #fff; }
+    .how .section-intro { color: rgba(255,255,255,.62); }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 44px; counter-reset: step; }
+    .step { background: var(--dark-2); border: 1px solid rgba(255,255,255,.07); border-radius: var(--radius); padding: 28px; }
+    .step-num { font-size: 13px; font-weight: 700; color: var(--green-light); letter-spacing: .06em; margin-bottom: 14px; }
+    .step h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+    .step p { color: rgba(255,255,255,.65); font-size: 15.5px; }
+    @media (max-width: 800px) { .steps { grid-template-columns: 1fr; } }
+
+    /* Pakketten */
+    .pricing { background: var(--bg); }
+    .pricing-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
+    .pricing-note { font-size: 14px; color: var(--muted); }
+    .packages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; align-items: stretch; }
+    .package { position: relative; display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 30px 28px; }
+    .package.featured { border: 2px solid var(--green); box-shadow: 0 18px 50px rgba(29,158,117,.14); }
+    .badge { position: absolute; top: -13px; left: 28px; font-size: 12px; font-weight: 700; color: #fff; background: var(--green); border-radius: 999px; padding: 4px 12px; }
+    .package h3 { font-size: 20px; font-weight: 700; }
+    .package .tagline { color: var(--muted); font-size: 15px; margin: 4px 0 20px; }
+    .price { font-size: 40px; font-weight: 800; letter-spacing: -.02em; line-height: 1; }
+    .price small { font-size: 14px; font-weight: 500; color: var(--muted); letter-spacing: 0; }
+    .package ul { list-style: none; margin: 24px 0 28px; display: grid; gap: 11px; flex: 1; align-content: start; }
+    .package li { display: flex; gap: 10px; font-size: 15px; }
+    .package li svg { flex-shrink: 0; width: 18px; height: 18px; margin-top: 3px; stroke: var(--green); fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+    .package .btn { width: 100%; }
+    .package:not(.featured) .btn { background: var(--white); color: var(--text); border-color: var(--border); }
+    .package:not(.featured) .btn:hover { border-color: var(--green); color: var(--green-dark); }
+    .custom-note { margin-top: 28px; text-align: center; color: var(--muted); font-size: 15px; }
+    .custom-note a { color: var(--green-dark); font-weight: 600; }
+    @media (max-width: 900px) { .packages { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; } }
+
+    /* Over */
+    .about-grid { display: grid; grid-template-columns: 280px 1fr; gap: 56px; align-items: center; }
+    .about-photo { border-radius: var(--radius); overflow: hidden; aspect-ratio: 1; background: var(--bg); }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .about-text p { font-size: 17px; color: #374151; margin-bottom: 14px; max-width: 620px; }
+    .about-sign { font-weight: 700; color: var(--green-dark) !important; }
+    @media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; gap: 28px; } .about-photo { max-width: 220px; } }
+
+    /* FAQ */
+    .faq { background: var(--bg); }
+    .faq-list { margin-top: 36px; max-width: 780px; display: grid; gap: 10px; }
+    details { background: var(--white); border: 1px solid var(--border); border-radius: 10px; }
+    summary { list-style: none; cursor: pointer; padding: 18px 22px; font-weight: 600; font-size: 16px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: '+'; font-size: 22px; font-weight: 400; color: var(--green); flex-shrink: 0; transition: transform .2s; }
+    details[open] summary::after { transform: rotate(45deg); }
+    summary:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; border-radius: 10px; }
+    details p { padding: 0 22px 20px; color: var(--muted); font-size: 15.5px; }
+
+    /* Contact */
+    .contact { background: var(--dark); color: #fff; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 56px; align-items: start; }
+    .contact .section-intro { color: rgba(255,255,255,.65); }
+    .contact-direct { margin-top: 32px; display: grid; gap: 12px; font-size: 15.5px; color: rgba(255,255,255,.75); }
+    .contact-direct a { color: var(--green-light); text-decoration: none; font-weight: 600; }
+    .contact-direct a:hover { text-decoration: underline; }
+    form { background: var(--dark-2); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .field { display: grid; gap: 6px; }
+    .field.full { grid-column: 1 / -1; }
+    label { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.75); }
+    input, select, textarea { font-family: inherit; font-size: 15px; color: #fff; background: var(--dark-3); border: 1px solid rgba(255,255,255,.12); border-radius: 8px; padding: 11px 13px; width: 100%; transition: border-color .15s; }
+    textarea { min-height: 110px; resize: vertical; }
+    select { appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239ca3af' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 13px center; padding-right: 36px; }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--green-light); }
+    .form-foot { grid-column: 1 / -1; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .form-privacy { font-size: 13px; color: rgba(255,255,255,.45); }
+    .form-status { grid-column: 1 / -1; font-size: 15px; border-radius: 8px; padding: 12px 14px; display: none; }
+    .form-status.ok { display: block; background: rgba(29,158,117,.15); color: var(--green-light); border: 1px solid rgba(93,202,165,.3); }
+    .form-status.err { display: block; background: rgba(239,68,68,.12); color: #fca5a5; border: 1px solid rgba(239,68,68,.3); }
+    .hp { position: absolute; left: -9999px; }
+    @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; gap: 40px; } }
+    @media (max-width: 560px) { form { grid-template-columns: 1fr; padding: 20px; } }
+
+    /* Footer */
+    footer { background: #08090b; color: rgba(255,255,255,.5); font-size: 14px; padding: 32px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+    footer img { height: 18px; width: auto; opacity: .85; }
+    footer a { color: rgba(255,255,255,.7); text-decoration: none; }
+    footer a:hover { color: #fff; }
+    .footer-meta { display: flex; gap: 18px; flex-wrap: wrap; }
+
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+
+<nav aria-label="Hoofdmenu">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo" aria-label="Motionprint, naar boven"><img src="Motionprint-full.png" alt="Motionprint" width="120" height="22" /></a>
+    <ul class="nav-links">
+      <li><a href="#werkwijze">Werkwijze</a></li>
+      <li><a href="#pakketten">Pakketten</a></li>
+      <li><a href="#over">Over mij</a></li>
+      <li><a href="#vragen">Vragen</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Plan een kennismaking</a>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- 1. Hero -->
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Werkplekmetingen in Gelderland en Overijssel</span>
+        <h1>Zwaar werk meten.<br><em>En lichter maken.</em></h1>
+        <p class="lead">Met kleine sensoren op het lichaam meten we hoe zwaar taken écht zijn: tijdens het werk, zonder dat de productie stil hoeft te liggen. U weet precies waar het knelt en wat helpt.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Plan een kennismaking</a>
+          <a href="#pakketten" class="btn btn-ghost">Bekijk de pakketten</a>
+        </div>
+        <div class="hero-trust">
+          <span><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Productie loopt door</span>
+          <span><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Vaste prijzen</span>
+          <span><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Uit de regio</span>
+        </div>
+      </div>
+      <figure class="hero-visual">
+        <video src="trueavatar.mp4" poster="trueavatar-poster.jpg" autoplay muted loop playsinline aria-label="Animatie van een medewerker die bukt om iets op te tillen, met de zwaarst belaste gewrichten gemarkeerd"></video>
+        <figcaption><b>Zo ziet u het.</b> Elke beweging gemeten, de zwaarst belaste plekken gemarkeerd.</figcaption>
+      </figure>
+    </div>
+  </header>
+
+  <!-- 2. Herkenbaar -->
+  <section class="recognize" aria-labelledby="h-herkenbaar">
+    <div class="container">
+      <div class="section-label">Herkenbaar?</div>
+      <h2 id="h-herkenbaar">Iedereen weet dat het zwaar is.<br>Niemand weet hoe zwaar.</h2>
+      <div class="recognize-grid">
+        <div class="recognize-item"><span class="dot"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><span>Iedereen weet dat sommige taken zwaar zijn, maar niemand kan zeggen hoe zwaar.</span></div>
+        <div class="recognize-item"><span class="dot"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><span>Medewerkers hebben rug-, nek- of schouderklachten, of vallen uit.</span></div>
+        <div class="recognize-item"><span class="dot"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><span>U wilt investeren in hulpmiddelen of een andere werkplek, maar weet niet waar het meeste effect zit.</span></div>
+        <div class="recognize-item"><span class="dot"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><span>U wilt kunnen laten zien dat u zwaar werk serieus aanpakt.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Waarom nu -->
+  <section aria-labelledby="h-waarom">
+    <div class="container">
+      <div class="section-label">Waarom nu?</div>
+      <h2 id="h-waarom">Zwaar werk laten liggen wordt duur.</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <h3>De Arbeidsinspectie kijkt mee</h3>
+          <p>Zwaar lichamelijk werk is een speerpunt van de inspectie. Bedrijven moeten kunnen aantonen dat ze de risico's kennen en aanpakken.</p>
+        </div>
+        <div class="why-card">
+          <h3>Uitval is duur</h3>
+          <p>Een medewerker die uitvalt door rugklachten kost al snel twee jaar loondoorbetaling, plus vervanging in een krappe arbeidsmarkt.</p>
+        </div>
+        <div class="why-card">
+          <h3>Goed personeel wilt u houden</h3>
+          <p>Werk dat lichter is, houdt mensen langer gezond aan het werk.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Hoe werkt het -->
+  <section class="how" id="werkwijze" aria-labelledby="h-werkwijze">
+    <div class="container">
+      <div class="section-label" style="color:var(--green-light)">Werkwijze</div>
+      <h2 id="h-werkwijze">Drie stappen, geen gedoe.</h2>
+      <p class="section-intro">U hoeft niets voor te bereiden. Wij nemen alles mee.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">STAP 1</div>
+          <h3>Kennismaking</h3>
+          <p>We lopen samen over de werkvloer en kiezen de taken die het zwaarst lijken.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">STAP 2</div>
+          <h3>Meten</h3>
+          <p>Een medewerker draagt kleine sensoren tijdens het gewone werk. Na een korte voorbereiding meten we elke taak een paar keer. De productie loopt gewoon door.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">STAP 3</div>
+          <h3>Rapport en advies</h3>
+          <p>U krijgt een helder overzicht van welke taken het zwaarst zijn, waarom, en wat u concreet kunt verbeteren. We lichten de uitkomsten persoonlijk toe.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Pakketten -->
+  <section class="pricing" id="pakketten" aria-labelledby="h-pakketten">
+    <div class="container">
+      <div class="pricing-head">
+        <div>
+          <div class="section-label">Pakketten</div>
+          <h2 id="h-pakketten">Vaste prijzen, vooraf duidelijk.</h2>
+        </div>
+        <p class="pricing-note">Alle prijzen exclusief btw. Reiskosten binnen de regio inbegrepen.</p>
+      </div>
+
+      <div class="packages">
+        <article class="package">
+          <h3>Quickscan</h3>
+          <p class="tagline">Eén zware taak in beeld.</p>
+          <div class="price">€895 <small>excl. btw</small></div>
+          <ul>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Meting van 1 taak, op locatie</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Kort rapport: hoe zwaar is deze taak en waar zit het probleem?</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>3 concrete verbeterpunten</li>
+          </ul>
+          <a href="#contact" class="btn" data-pakket="Quickscan">Vraag de quickscan aan</a>
+        </article>
+
+        <article class="package featured">
+          <span class="badge">Meest gekozen</span>
+          <h3>Werkplekmeting</h3>
+          <p class="tagline">Een compleet beeld van uw zwaarste werk.</p>
+          <div class="price">€2.250 <small>excl. btw</small></div>
+          <ul>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Meting van 3 tot 5 taken, één dag op locatie</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Rapport met ranglijst van de zwaarste taken en de oorzaken</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Verbeteringen met prioriteit: waar levert uw investering het meeste op?</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Presentatie van de uitkomsten aan het management</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary" data-pakket="Werkplekmeting">Vraag de werkplekmeting aan</a>
+        </article>
+
+        <article class="package">
+          <h3>Nameting</h3>
+          <p class="tagline">Werkt de aanpassing echt?</p>
+          <div class="price">€1.150 <small>excl. btw</small></div>
+          <ul>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Dezelfde taken opnieuw gemeten na uw aanpassingen</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Voor/na-vergelijking in één overzicht</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Zwart op wit wat uw investering heeft opgeleverd</li>
+          </ul>
+          <a href="#contact" class="btn" data-pakket="Nameting">Vraag de nameting aan</a>
+        </article>
+      </div>
+
+      <p class="custom-note">Iets anders nodig? Meer taken of meerdere locaties? <a href="#contact">Neem contact op</a> voor een voorstel op maat.</p>
+    </div>
+  </section>
+
+  <!-- 6. Over -->
+  <section id="over" aria-labelledby="h-over">
+    <div class="container about-grid">
+      <div class="about-photo"><img src="felix.jpg" alt="Felix Wolbert" width="400" height="400" loading="lazy" /></div>
+      <div class="about-text">
+        <div class="section-label">Wie meet er?</div>
+        <h2 id="h-over">Een bewegingswetenschapper uit de regio.</h2>
+        <p>Ik ben Felix Wolbert, bewegingswetenschapper uit Hengelo (Gld). Ik heb jarenlang bij Xsens gewerkt, de maker van de sensoren die wereldwijd worden gebruikt om beweging te meten. Met Motionprint breng ik die techniek naar de werkvloer.</p>
+        <p>De metingen analyseer ik met onze eigen software. Daardoor zijn de uitkomsten snel, objectief en vergelijkbaar.</p>
+        <p class="about-sign">Uit de regio, voor de regio. Ik ben zo bij u.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FAQ -->
+  <section class="faq" id="vragen" aria-labelledby="h-vragen">
+    <div class="container">
+      <div class="section-label">Veelgestelde vragen</div>
+      <h2 id="h-vragen">Goed om te weten.</h2>
+      <div class="faq-list">
+        <details>
+          <summary>Moet de productie stil liggen?</summary>
+          <p>Nee. We meten tijdens het gewone werk.</p>
+        </details>
+        <details>
+          <summary>Hoe lang duurt een meting?</summary>
+          <p>Een quickscan kost een paar uur op locatie, een werkplekmeting één dag. Het rapport heeft u binnen <!-- TODO Felix: levertijd bevestigen -->5 werkdagen.</p>
+        </details>
+        <details>
+          <summary>Wat merken medewerkers ervan?</summary>
+          <p>Ze dragen een paar kleine sensoren met klittenband. Na een paar minuten merken ze er weinig meer van.</p>
+        </details>
+        <details>
+          <summary>Wat gebeurt er met de gegevens?</summary>
+          <p><!-- TODO Felix: controleren/aanpassen -->Het rapport bevat geen namen van medewerkers. We meten bewegingen, geen personen, en bespreken vooraf met u hoe de gegevens worden gebruikt en bewaard.</p>
+        </details>
+        <details>
+          <summary>Wat heb ik aan het rapport?</summary>
+          <p>U weet welke taken prioriteit hebben, wat u kunt verbeteren en hoe u laat zien dat u zwaar werk aanpakt, bijvoorbeeld richting uw arbodienst of de inspectie.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Contact -->
+  <section class="contact" id="contact" aria-labelledby="h-contact">
+    <div class="container contact-grid">
+      <div>
+        <div class="section-label" style="color:var(--green-light)">Contact</div>
+        <h2 id="h-contact">Benieuwd wat een meting u oplevert?</h2>
+        <p class="section-intro">Laat uw gegevens achter. Ik neem binnen één werkdag contact op voor een vrijblijvende kennismaking.</p>
+        <div class="contact-direct">
+          <span>E-mail: <a href="mailto:info@motion-print.com">info@motion-print.com</a></span>
+          <!-- TODO Felix: telefoonnummer toevoegen, bv. <span>Telefoon: <a href="tel:+316xxxxxxxx">06 xx xx xx xx</a></span> -->
+          <span>Hengelo (Gld), Achterhoek</span>
+        </div>
+      </div>
+
+      <form id="contact-form" novalidate>
+        <div class="field"><label for="f-naam">Naam *</label><input id="f-naam" name="name" autocomplete="name" required /></div>
+        <div class="field"><label for="f-bedrijf">Bedrijf *</label><input id="f-bedrijf" name="company" autocomplete="organization" required /></div>
+        <div class="field"><label for="f-email">E-mail *</label><input id="f-email" name="email" type="email" autocomplete="email" required /></div>
+        <div class="field"><label for="f-tel">Telefoon</label><input id="f-tel" name="phone" type="tel" autocomplete="tel" /></div>
+        <div class="field full">
+          <label for="f-pakket">Interesse in</label>
+          <select id="f-pakket" name="pakket">
+            <option>Weet ik nog niet</option>
+            <option>Quickscan</option>
+            <option>Werkplekmeting</option>
+            <option>Nameting</option>
+          </select>
+        </div>
+        <div class="field full"><label for="f-bericht">Bericht</label><textarea id="f-bericht" name="message" placeholder="Om welke taken of werkplekken gaat het?"></textarea></div>
+        <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+        <div class="form-foot">
+          <button type="submit" class="btn btn-primary" id="f-submit">Verstuur</button>
+          <span class="form-privacy">Uw gegevens worden alleen gebruikt om contact met u op te nemen.</span>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <img src="Motionprint-full.png" alt="Motionprint" width="98" height="18" />
+    <div class="footer-meta">
+      <span>Motionprint · Hengelo (Gld)</span>
+      <!-- TODO Felix: <span>KvK 12345678</span> -->
+      <span>Software voor ergonomische analyse: <a href="https://motion-print.com/">motion-print.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Pakketknoppen vullen het keuzemenu in het formulier
+  document.querySelectorAll('[data-pakket]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      document.getElementById('f-pakket').value = a.getAttribute('data-pakket');
+    });
+  });
+
+  // Formulier versturen via het bestaande contact-endpoint van motion-print.com
+  (function () {
+    var form = document.getElementById('contact-form');
+    var status = document.getElementById('form-status');
+    var btn = document.getElementById('f-submit');
+
+    function show(type, msg) { status.className = 'form-status ' + type; status.textContent = msg; }
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      if (form.website.value) return; // spam-honeypot
+      var name = form.name.value.trim(), company = form.company.value.trim(), email = form.email.value.trim();
+      if (!name || !company || !email) { show('err', 'Vul uw naam, bedrijf en e-mailadres in.'); return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { show('err', 'Controleer uw e-mailadres.'); return; }
+
+      var pakket = form.pakket.value;
+      btn.disabled = true; btn.textContent = 'Versturen…';
+      try {
+        var res = await fetch('https://contact.motion-print.com/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            destination: 'info',
+            subject: 'motionprint.nl — aanvraag ' + pakket,
+            topic: 'Werkplekmeting (motionprint.nl): ' + pakket,
+            name: name,
+            email: email,
+            company: company,
+            role: '',
+            phone: form.phone.value.trim(),
+            message: form.message.value.trim()
+          })
+        });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        form.reset();
+        show('ok', 'Bedankt! Ik neem binnen één werkdag contact met u op.');
+      } catch (err) {
+        show('err', 'Versturen lukte niet. Mail me direct op info@motion-print.com, dan reageer ik snel.');
+      } finally {
+        btn.disabled = false; btn.textContent = 'Verstuur';
+      }
+    });
+  })();
+</script>
+</body>
+</html>
